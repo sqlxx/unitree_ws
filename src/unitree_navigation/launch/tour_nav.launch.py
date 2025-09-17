@@ -50,12 +50,12 @@ def generate_launch_description():
       default_value='nav_container'
     ),
     IncludeLaunchDescription(
-      PathJoinSubstitution([FindPackageShare('tb3_navigation'), 'launch', 'slam.launch.py']),
+      PathJoinSubstitution([FindPackageShare('unitree_navigation'), 'launch', 'slam.launch.py']),
       launch_arguments={'use_sim_time': use_sim_time, 'log_level': log_level}.items(),
       condition=IfCondition(use_slam)
     ),
     IncludeLaunchDescription(
-      PathJoinSubstitution([FindPackageShare('tb3_navigation'), 'launch', 'localization.launch.py']),
+      PathJoinSubstitution([FindPackageShare('unitree_navigation'), 'launch', 'localization.launch.py']),
       launch_arguments={
         'use_sim_time': use_sim_time, 
         'log_level': log_level, 
@@ -65,7 +65,7 @@ def generate_launch_description():
         'use_amcl': use_amcl}.items(),
     ),
     IncludeLaunchDescription(
-      PathJoinSubstitution([FindPackageShare('tb3_navigation'), 'launch', 'navigation.launch.py']),
+      PathJoinSubstitution([FindPackageShare('unitree_navigation'), 'launch', 'navigation.launch.py']),
       launch_arguments={
         'use_sim_time': use_sim_time, 
         'log_level': log_level, 

@@ -21,7 +21,7 @@ def generate_launch_description():
 
   configured_params = ParameterFile(
     RewrittenYaml(
-      source_file=os.path.join(get_package_share_directory('tb3_navigation'), 'config', 'navigation_config.yaml'),
+      source_file=os.path.join(get_package_share_directory('unitree_navigation'), 'config', 'navigation_config.yaml'),
       param_rewrites=param_substitutions,
       convert_types=True
     ), allow_substs=True

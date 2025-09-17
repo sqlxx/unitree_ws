@@ -21,7 +21,7 @@ def generate_launch_description():
 
   configured_params = ParameterFile(
     RewrittenYaml(
-      source_file=os.path.join(get_package_share_directory('tb3_navigation'), 'config', 'slam_config.yaml'),
+      source_file=os.path.join(get_package_share_directory('unitree_navigation'), 'config', 'slam_config.yaml'),
       param_rewrites=param_substitutions,
       convert_types=True
     ), allow_substs=True
@@ -46,7 +46,7 @@ def generate_launch_description():
       parameters=[configured_params]
     ),
     IncludeLaunchDescription(
-      PathJoinSubstitution([FindPackageShare('tb3_slam'), 'launch', 'slam_toolbox_sync.launch.py']),
+      PathJoinSubstitution([FindPackageShare('unitree_slam'), 'launch', 'slam_sync.launch.py']),
       launch_arguments={'use_sim_time': use_sim_time, 'log_level': log_level}.items()
     )
   ])
