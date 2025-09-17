@@ -22,6 +22,17 @@ def generate_launch_description():
       description='Full path to the ROS2 parameters file to use'
     ),
     Node(
+      package='pointcloud_to_laserscan',
+      executable='pointcloud_to_laserscan_node',
+      name='pointcloud_to_laserscan',
+      output='screen',
+      parameters=[params_file],
+      remappings=[
+        ('cloud_in', '/points'),
+        ('scan', '/scan')
+      ]
+    ),
+    Node(
       package="slam_toolbox",
       executable='sync_slam_toolbox_node',
       name='slam_toolbox',
